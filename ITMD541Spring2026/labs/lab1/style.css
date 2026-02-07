@@ -1,0 +1,45 @@
+/* *通配符选择所有html元素，并设置边框盒子模型 */
+* { box-sizing: border-box; }  
+
+body {
+  margin: 0;  /*body的默认margin为0*/
+  font-family: Arial, sans-serif; /*设置默认字体为Arial*/
+  color: #222;
+  background: #fff;
+}
+
+.page {
+  width: min(980px, 94%); /*page宽度，取两个值中最小值。最大940px，窄屏94%*/
+  margin: 18px auto; /*margin水平居中，左右自动计算*/
+  border: 1px solid #d8d8d8; /*边框1px 实线*/
+}
+
+/* 顶部信息区域样式*/
+.top {
+  display: grid; /*使用grid布局*/
+  /* 定义两列网格，lfr-第一列占剩余所有可用空间。第二列固定180px */
+  grid-template-columns: 1fr 180px; 
+  gap: 14px; /*网格项之间的间隙为14px*/
+  padding: 12px; /*内容与边框的距离为12px*/
+  border-bottom: 1px solid #d8d8d8;
+}
+
+/* 主文档内容样式 */
+.main {
+  display: grid; /*使用grid布局*/
+  /* 定义两列比例,2.2：1左右 */
+  grid-template-columns: 2.2fr 1fr; 
+  gap: 14px; 
+  padding: 12px;
+}
+
+/* 可视化临时设置，保证布局有足够高度显示。(临时查看用) */
+.left { min-height: 600px; }
+.right { min-height: 600px; }
+
+.footer {
+  padding: 10px 12px;
+  border-top: 1px solid #d8d8d8;
+  font-size: 14px;
+  color: #555;
+}
