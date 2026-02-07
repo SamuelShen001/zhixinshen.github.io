@@ -3,14 +3,34 @@
 
 <head>
 	<meta charset="UTF-8">
+    <!-- viewport，浏览器显示内容的区域。宽度等于设备宽度。初始缩放级别为100% -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Samuel's Personal Resume</title>
+	<title>Samuel's Personal Resume</title> 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>SamuelShen</h1>
-    <p>Content details...</p>
+    <!-- 建立通用容器page -->
+    <div class="page">  
+        <!-- 定义文档的页眉/顶部区域为top -->
+        <header class="top">
+            <h1>SamuelShen</h1>
+        </header>
+        <!-- 定义文档主要内容 -->
+        <main class="main">
+            <!-- 定义左侧独立区块 -->
+            <section class="left">
+                <p>Content details...</p>   
+            </section>
+            <!-- 定义侧边独立区块 -->
+            <aside class="right">
+                <p>Content details...</p>  
+            </aside>
+        </main>
+        
+        <footer class="footer"></footer>
+    </div>
+    
 
 </body>
 
