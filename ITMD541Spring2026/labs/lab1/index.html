@@ -2,16 +2,16 @@
 <html lang="en-US">
 
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <!-- viewport，浏览器显示内容的区域。宽度等于设备宽度。初始缩放级别为100% -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Samuel's Personal Resume</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Samuel's Personal Resume</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <!-- 建立通用容器page -->
-    <div class="page">  
+    <div class="page">
         <!-- 定义文档的页眉/顶部区域为top -->
         <header class="top">
             <section class="basic">
@@ -26,31 +26,124 @@
                     <p><strong>Email:</strong> <a href="mailto:214034466@qq.com">214034466@qq.com</a></p>
 
                     <!-- target="_blank"：在新标签页打开链接 -->
-                    <p><strong>Live:</strong> <a href="https://samuelshen001.github.io/zhixinshen.github.io/ITMD541Spring2026/labs/lab1/index.html" 
-                        target="_blank" rel="noopener">GitHub Pages</a></p>
-                    
+                    <p><strong>Live:</strong> <a
+                            href="https://samuelshen001.github.io/zhixinshen.github.io/ITMD541Spring2026/labs/lab1/index.html"
+                            target="_blank" rel="noopener">GitHub Pages</a></p>
+
                     <p><strong>GitHub:</strong>
                         <a href="https://github.com/SamuelShen001/zhixinshen.github.io/tree/main/ITMD541Spring2026/labs/lab1"
                             target="_blank" rel="noopener">Repository</a>
                     </p>
-                  </div>
+                </div>
             </section>
             <section class="photo">
                 <div class="photo-title">Photo</div>
                 <!-- alt替换文本：我的个人头像名字 -->
                 <img src="images/profile.jpg" alt="Profile photo of Samuel Shen">
-              </section>
+            </section>
         </header>
-        
+
         <!-- 定义文档主要内容 -->
         <main class="main">
             <!-- 定义左侧独立区块 -->
             <section class="left">
-                <p>Content details...</p>   
+                <!-- 工作经验 -->
+                <section class="block">
+                    <h2 class="block-title">Work Experience</h2>
+
+                    <article class="item">
+                        <p class="item-meta"><strong>Time:</strong> Aug 2020 – Present</p>
+                        <p><strong>Company:</strong> Zhihui Hutong Science And Technology Co., Ltd.</p>
+                        <p><strong>Position:</strong> Product Architect</p>
+
+                        <p class="block-body"><strong>Responsibilities:</strong></p>
+                        <ul class="item-list">
+                            <li>Responsible for overall product architecture design and planning.</li>
+                            <li>Led requirement analysis and translated business needs into system solutions.</li>
+                            <li>Coordinated cross-functional teams to ensure product delivery.</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <!-- 项目经验 -->
+                <section class="block">
+                    <h2 class="block-title">Project Experience</h2>
+
+                    <article class="item">
+                        <p class="item-meta">2020/07 – 2024/08</p>
+                        <p><strong>Project:</strong> 广州市中心城区城市道路停车智能管理信息化采购项目</p>
+                        <p class="block-body">
+                            广州市高位视频停车系统、大数据分析系统...
+                        </p>
+                    </article>
+
+                    <article class="item">
+                        <p class="item-meta">2025/01 – 2026/02</p>
+                        <p><strong>Project:</strong> 广州市花都区交通运输局花都区智慧停车采购项目</p>
+                        <p class="block-body">
+                            内容123...
+                        </p>
+                    </article>
+                </section>
+
+                <!-- 自我评价 -->
+                <section class="block">
+                    <h2 class="block-title">Self Evaluation</h2>
+                    <p class="block-body">
+                        我的自我评价内容...
+                    </p>
+                </section>
             </section>
+
             <!-- 定义侧边独立区块 -->
             <aside class="right">
-                <p>Content details...</p>  
+                <!-- 教育经历 -->
+                <section class="side-block">
+                    <h2 class="side-title">Education</h2>
+                    <p class="side-line"><strong>Sun Yat-sen University</strong></p>
+                    <p class="side-line">Apr 2016 – Jul 2019</p>
+
+                    <hr class="sep">
+
+                    <p class="side-line"><strong>Illinois Institute of Technology</strong></p>
+                    <p class="side-line">Software Engineering (In Progress)</p>
+                    <p class="side-line">Jan 2024 – Present</p>
+                </section>
+
+                <!-- 相关技能 -->
+                <section class="side-block">
+                    <h2 class="side-title">Skills</h2>
+                    <ul class="skill-list">
+                        <li>Java</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Project Management</li>
+                    </ul>
+                </section>
+
+                <!-- 培训经历 -->
+                <section class="side-block">
+                    <h2 class="side-title">Training</h2>
+
+                    <p class="side-line"><strong>2019/11</strong></p>
+                    <p class="side-line">System Integration Project Management</p>
+
+                    <hr class="sep">
+                    <p class="side-line"><strong>2015/02 – 2016/02</strong></p>
+                    <p class="side-line">Advanced Product Manager Training</p>
+                </section>
+
+                <!-- 兴趣爱好 -->
+                <section class="side-block">
+                    <h2 class="side-title">Hobbies</h2>
+                    <ul class="hobbies-list">
+                        <li>Sing</li>
+                        <li>Saxophone</li>
+                        <li>Swim</li>
+                        <li>Fitness</li>
+                    </ul>
+                </section>
             </aside>
         </main>
 
@@ -59,7 +152,7 @@
             <p>Hosted on GitHub Pages</p>
         </footer>
     </div>
-    
+
 
 </body>
 
