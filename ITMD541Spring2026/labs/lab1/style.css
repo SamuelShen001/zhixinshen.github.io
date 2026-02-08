@@ -33,6 +33,21 @@ body {
   padding: 12px;
 }
 
+/* 照片区域 */
+.photo {
+    border: 1px solid #d8d8d8;
+    text-align: center;
+    align-self: start;
+  }
+
+.photo img {
+width: 120px; /* 控制头像大小 */
+height: auto;  /* 保持比例 */
+display: block;
+margin: 8px auto; /* 水平居中 */
+}
+  
+
 /* 可视化临时设置，保证布局有足够高度显示。(临时查看用) */
 .left { min-height: 600px; }
 .right { min-height: 600px; }
