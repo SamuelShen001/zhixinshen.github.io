@@ -7,6 +7,14 @@ body {
   color: #222;
   background: #fff;
 }
+/* 统一段落和列表的默认间距 */
+a { color: #1a73e8; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+p { margin: 6px 0; }
+
+ul { margin: 6px 0; padding-left: 18px; }
+li { margin: 4px 0; }
 
 .page {
   width: min(980px, 94%); /*page宽度，取两个值中最小值。最大940px，窄屏94%*/
@@ -23,6 +31,8 @@ body {
   padding: 12px; /*内容与边框的距离为12px*/
   border-bottom: 1px solid #d8d8d8;
 }
+
+
 
 /* 主文档内容样式 */
 .main {
@@ -49,8 +59,8 @@ margin: 8px auto; /* 水平居中 */
   
 
 /* 可视化临时设置，保证布局有足够高度显示。(临时查看用) */
-.left { min-height: 600px; }
-.right { min-height: 600px; }
+/* .left { min-height: 600px; }
+.right { min-height: 600px; } */
 
 .footer {
   padding: 10px 12px;
@@ -58,3 +68,4 @@ margin: 8px auto; /* 水平居中 */
   font-size: 14px;
   color: #555;
 }
+.footer p { margin: 4px 0; }
