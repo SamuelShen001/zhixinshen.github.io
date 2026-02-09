@@ -1,71 +1,249 @@
-/* *通配符选择所有html元素，并设置边框盒子模型 */
-* { box-sizing: border-box; }  
+/* Set the border box model - *通配符选择所有html元素，并设置边框盒子模型 */
+* {
+    box-sizing: border-box;
+}
 
 body {
-  margin: 0;  /*body的默认margin为0*/
-  font-family: Arial, sans-serif; /*设置默认字体为Arial*/
-  color: #222;
-  background: #fff;
+    margin: 0;
+    /*body的默认margin为0*/
+    font-family: Arial, sans-serif;
+    /*设置默认字体为Arial*/
+    color: #222;
+    background: #fff;
 }
+
 /* 统一段落和列表的默认间距 */
-a { color: #1a73e8; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
 
-p { margin: 6px 0; }
+a:hover {
+    text-decoration: underline;
+}
 
-ul { margin: 6px 0; padding-left: 18px; }
-li { margin: 4px 0; }
+p {
+    margin: 6px 0;
+}
+
+ul {
+    margin: 6px 0;
+    padding-left: 18px;
+}
+
+li {
+    margin: 4px 0;
+}
 
 .page {
-  width: min(980px, 94%); /*page宽度，取两个值中最小值。最大940px，窄屏94%*/
-  margin: 18px auto; /*margin水平居中，左右自动计算*/
-  border: 1px solid #d8d8d8; /*边框1px 实线*/
+    width: min(980px, 94%);
+    /*page宽度，取两个值中最小值。最大940px，窄屏94%*/
+    margin: 18px auto;
+    /*margin水平居中，左右自动计算*/
+    border: 1px solid #d8d8d8;
+    /*边框1px 实线*/
 }
 
-/* 顶部信息区域样式*/
+/* Style of the top information area - 顶部信息区域样式*/
 .top {
-  display: grid; /*使用grid布局*/
-  /* 定义两列网格，lfr-第一列占剩余所有可用空间。第二列固定180px */
-  grid-template-columns: 1fr 180px; 
-  gap: 14px; /*网格项之间的间隙为14px*/
-  padding: 12px; /*内容与边框的距离为12px*/
-  border-bottom: 1px solid #d8d8d8;
+    display: grid;
+    /*使用grid布局*/
+    /* 定义两列网格，lfr-第一列占剩余所有可用空间。第二列固定180px */
+    grid-template-columns: 1fr 180px;
+    gap: 14px;
+    /*网格项之间的间隙为14px*/
+    padding: 12px;
+    /*内容与边框的距离为12px*/
+    border-bottom: 1px solid #d8d8d8;
+
+    /* 控制网格项（grid items）在交叉轴上的对齐方式，对齐到容器的start起始位置 */
+    align-items: start;
 }
 
 
-
-/* 主文档内容样式 */
-.main {
-  display: grid; /*使用grid布局*/
-  /* 定义两列比例,2.2：1左右 */
-  grid-template-columns: 2.2fr 1fr; 
-  gap: 14px; 
-  padding: 12px;
+.name {
+    margin: 0 0 8px;
+    /*下边外边距8px(上、右、下、左)。*/
+    font-size: 26px;
+    font-weight: 700;
+    /*字体粗细，100-900*/
 }
 
-/* 照片区域 */
+.info-grid {
+    display: grid;
+    /*启用Grid布局*/
+    grid-template-columns: 1fr 1fr;
+    /*定义两列等宽网格，各50%宽度*/
+    gap: 6px 14px;
+    /*row-gap 和 column-gap的距离控制*/
+    font-size: 14px;
+}
+
+.info-grid p {
+    margin: 0;
+    /*info-grid里面所有的p标签，都移除外边距*/
+}
+
+/* Adjustment of photo format-照片格式调整 */
+.photo-title {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 6px 0;
+    /*上下内边距6px，左右为0*/
+    border-bottom: 1px solid #d8d8d8;
+    /*底部边框。并让标题和照片分区*/
+    background: #f5f5f5;
+    /*背景颜色*/
+}
+
+/* Photo area - 照片区域 */
 .photo {
     border: 1px solid #d8d8d8;
     text-align: center;
     align-self: start;
-  }
+    padding-bottom: 6px;
+    /*增加一点底部 padding（让图片不贴边框）*/
+}
 
 .photo img {
-width: 120px; /* 控制头像大小 */
-height: auto;  /* 保持比例 */
-display: block;
-margin: 8px auto; /* 水平居中 */
-}
-  
+    width: 120px;
+    /* 控制头像大小 */
+    height: auto;
+    /* 保持比例 */
+    display: block;
+    margin: 10px auto;
+    /* 水平居中 */
+    border-radius: 4px;
 
-/* 可视化临时设置，保证布局有足够高度显示。(临时查看用) */
+}
+
+
+/* Main document content style-主文档内容样式 */
+.main {
+    display: grid;
+    /*使用grid布局*/
+    /* 定义两列比例,2.2：1左右 */
+    grid-template-columns: 2.2fr 1fr;
+    gap: 14px;
+    padding: 12px;
+}
+
+
+/* Left column: Module title bar + content layout - 左栏：模块标题条 + 内容排版 */
+.block {
+    margin-bottom: 14px;
+    /* 每个模块之间留空 */
+    border: 1px solid #cfe3e3;
+    /* 外框 */
+    background: #fff;
+    /* 内容白底 */
+}
+
+.block-title {
+    margin: 0;
+    padding: 8px 10px;
+    background: #dff1f1;
+    /* 浅蓝色标题条 */
+    border-bottom: 1px solid #cfe3e3;
+    /* 只留底线分隔 */
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.block-body {
+    margin: 10px 0 0;
+    font-size: 14px;
+    line-height: 1.7;
+
+}
+
+
+.block-body,
+.item { /*让标题下的内容与边框有内边距，不贴边*/
+    padding: 0 10px 10px;
+}
+
+.item-meta {
+    margin: 6px 0 12px;
+    color: #666;
+    /* 时间行弱化一点 */
+    font-size: 13px;
+}
+
+.item-list {
+    margin: 6px 0 0;
+    padding-left: 18px;
+    font-size: 14px;
+}
+
+.item-list li {
+    margin: 4px 0;
+}
+
+
+/* Right column: Adjustment of card style-右栏：卡片样式调整 */
+.side-block {
+    background: #fff;
+    border: 1px solid #cfe3e3;
+    margin-bottom: 12px;
+    padding: 0px;
+    /* 让标题条贴边 */
+}
+
+.side-title {
+    margin: 0;
+    padding: 8px 10px;
+    background: #dff1f1;
+    /* 只有标题条浅蓝 */
+    border-bottom: 1px solid #cfe3e3;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.side-line {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.side-line,
+.skill-list,
+.hobbies-list {
+    padding: 0 10px;
+}
+
+.skill-list,
+.hobbies-list {
+    padding-left: 28px;
+    /* 10px + 18px */
+    margin: 8px 0 10px;
+    font-size: 14px;
+}
+
+/* 卡片里的分隔线 */
+.sep {
+    border: none;
+    border-top: 1px solid #cfe3e3;
+    margin: 10px;
+}
+
+.skill-list li,
+.hobbies-list li {
+    margin: 4px 0;
+}
+
+
+
+/* Temporary code-可视化临时设置，保证布局有足够高度显示。(临时查看用) */
 /* .left { min-height: 600px; }
 .right { min-height: 600px; } */
 
 .footer {
-  padding: 10px 12px;
-  border-top: 1px solid #d8d8d8;
-  font-size: 14px;
-  color: #555;
+    padding: 10px 12px;
+    border-top: 1px solid #d8d8d8;
+    font-size: 14px;
+    color: #555;
 }
-.footer p { margin: 4px 0; }
+
+.footer p {
+    margin: 4px 0;
+}
