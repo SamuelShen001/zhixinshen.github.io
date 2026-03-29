@@ -59,15 +59,17 @@
         // 从页面中删除该按钮
     }
 
-    // 1e. Change the background color of the nav bar to match the footer.
-    // 修改导航栏背景色为与 footer 相同（深色）
-    const nav = document.querySelector("nav");
+   // 1e. Force the top bar background color.
+   // 修改顶部导航条背景色
+   const topBar = document.querySelector("body > nav, header nav, nav");
+   if (topBar) {
+       topBar.style.setProperty("background", "#1e293b", "important");
+       topBar.style.setProperty("background-color", "#1e293b", "important");
+   }
 
-    if (nav) {
-        nav.style.backgroundColor = "#1e293b";
-        // Apply dark color similar to footer
-        // 设置为与底部接近的深色
-    }
+   document.querySelectorAll("nav, nav *, header, header *").forEach(function (el) {
+       el.style.setProperty("background-color", "#1e293b", "important");
+   });
 
     // 2a. Change all service icons color to #47C714.
     // 将 Services 区域所有图标改为绿色
