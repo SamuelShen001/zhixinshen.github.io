@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic page settings / 页面基础设置 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Page title shown in browser tab / 浏览器标签页标题 -->
+  <title>Lab 5 - International Tip Calculator</title>
+
+  <!-- External CSS file / 外部样式表 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Main page wrapper / 页面主容器 -->
+  <main class="page">
+    <section class="shell">
+
+      <!-- Left info panel / 左侧说明信息区 -->
+      <aside class="info-panel">
+        <div>
+          <!-- Small label tag / 小标签 -->
+          <span class="tag">ITMD 541 - Lab 5</span>
+
+          <!-- Main title / 主标题 -->
+          <h1>International Tip Calculator</h1>
+
+          <!-- Short intro text / 简短介绍文字 -->
+          <p class="subtitle">
+            Calculate tax, tip, and convert totals into Euros and Indian Rupees.
+          </p>
+        </div>
+      </aside>
+
+      <!-- Main calculator card / 右侧主计算器卡片 -->
+      <section class="card">
+        <!-- Section heading / 表单区域标题 -->
+        <h2>Calculator</h2>
+        <p class="subtitle">Enter your bill amount and select your preferred tip.</p>
+
+        <!-- Currency conversion information / 汇率说明 -->
+        <div class="rate-box">
+          <p><strong>Currency conversion</strong></p>
+          <p>$1 USD = €0.95 EUR</p>
+          <p>$1 USD = ₹85 INR</p>
+        </div>
+
+        <!-- Form starts here / 表单开始 -->
+        <form id="tipForm" novalidate>
+
+          <!-- Input section title / 输入区域标题 -->
+          <div class="section-title">Customer Input</div>
+
+          <!-- Bill total + tax exempt row / 账单金额和免税选项一行 -->
+          <div class="form-row">
+
+            <!-- Bill total input / 账单金额输入框 -->
+            <div class="form-group">
+              <label for="billTotal">Bill Total ($)</label>
+              <input
+                type="text"
+                id="billTotal"
+                name="billTotal"
+                placeholder="Enter bill amount"
+              >
+              <!-- Helper text / 辅助说明 -->
+              <p class="helper">Enter a non-negative number only.</p>
+            </div>
+
+            <!-- Tax exempt checkbox / 免税复选框 -->
+            <div class="form-group">
+              <label for="taxExempt">Tax Option</label>
+              <div class="checkbox-box">
+                <input
+                  type="checkbox"
+                  id="taxExempt"
+                  name="taxExempt"
+                >
+                <label for="taxExempt">Tax Exempt</label>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Currency select dropdown / 货币下拉选择框 -->
+          <div class="form-group">
+            <label for="currency">Select Currency</label>
+            <select id="currency" name="currency">
+              <option value="USD">US Dollars ($)</option>
+              <option value="EUR">Euros (€)</option>
+              <option value="INR">Rupees (₹)</option>
+            </select>
+          </div>
+
+          <!-- Tip slider and tip percentage output / 小费滑块和百分比输出 -->
+          <div class="form-group">
+            <label for="tipRange">Tip</label>
+            <div class="tip-row">
+              <input
+                type="range"
+                id="tipRange"
+                name="tipRange"
+                min="0"
+                max="100"
+                value="0"
+              >
+              <input
+                type="text"
+                id="tipPercentage"
+                name="tipPercentage"
+                value="0%"
+                disabled
+                class="disabled-output"
+              >
+            </div>
+          </div>
+
+          <!-- Output section title / 输出区域标题 -->
+          <div class="section-title">Calculated Output</div>
+
+          <!-- Total bill with tax output / 含税总金额输出框 -->
+          <div class="form-group">
+            <label for="billWithTax">Total Bill with Tax (11%)</label>
+            <input
+              type="text"
+              id="billWithTax"
+              name="billWithTax"
+              disabled
+              class="disabled-output"
+            >
+          </div>
+
+          <!-- Converted tip amount output / 转换后小费金额输出框 -->
+          <div class="form-group">
+            <label for="tipAmount">Converted Tip Amount</label>
+            <input
+              type="text"
+              id="tipAmount"
+              name="tipAmount"
+              disabled
+              class="disabled-output"
+            >
+          </div>
+
+          <!-- Final converted total output / 转换后的最终总金额输出框 -->
+          <div class="form-group">
+            <label for="finalTotal">Converted Total Bill with Tip and Tax</label>
+            <input
+              type="text"
+              id="finalTotal"
+              name="finalTotal"
+              disabled
+              class="disabled-output"
+            >
+          </div>
+
+          <!-- Error message area / 错误提示区域 -->
+          <p id="errorMessage" class="error"></p>
+
+        </form>
+      </section>
+
+    </section>
+  </main>
+
+  <!-- External JavaScript file / 外部 JavaScript 文件 -->
+  <script src="z-shen-lab5.js"></script>
+
+</body>
+</html>
