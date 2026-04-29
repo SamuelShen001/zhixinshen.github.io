@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic HTML5 page setup / HTML5 基本页面设置 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lab 6 - Sunrise Sunset Dashboard</title>
+
+  <!-- External CSS file / 外部 CSS 文件 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Page wrapper / 页面整体容器 -->
+  <div class="page-wrapper">
+
+    <!-- Header area / 页面顶部标题区域 -->
+    <header class="site-header">
+      <p class="course-label">ITMD 541 - Graduate Student Lab 6</p>
+      <h1>Sunrise & Sunset Dashboard</h1>
+      <p class="intro-text">
+        Search a location or use your current location to view sunrise, sunset,
+        dawn, dusk, day length, solar noon, and time zone information.
+      </p>
+    </header>
+
+    <!-- Main content area / 页面主要内容区域 -->
+    <main>
+      <!-- Search panel / 查询操作区域 -->
+      <section class="search-panel" aria-label="Location search panel">
+        <div class="form-group">
+          <label for="locationSelect">Choose a location</label>
+
+          <!-- Location select list / 固定地点下拉框 -->
+          <select id="locationSelect">
+            <option value="">-- Select a location --</option>
+            <option value="41.8781,-87.6298,Chicago, USA">Chicago, USA</option>
+            <option value="40.7128,-74.0060,New York, USA">New York, USA</option>
+            <option value="34.0522,-118.2437,Los Angeles, USA">Los Angeles, USA</option>
+            <option value="51.5072,-0.1276,London, UK">London, UK</option>
+            <option value="48.8566,2.3522,Paris, France">Paris, France</option>
+            <option value="35.6762,139.6503,Tokyo, Japan">Tokyo, Japan</option>
+            <option value="1.3521,103.8198,Singapore">Singapore</option>
+            <option value="23.1291,113.2644,Guangzhou, China">Guangzhou, China</option>
+            <option value="-33.8688,151.2093,Sydney, Australia">Sydney, Australia</option>
+            <option value="25.2048,55.2708,Dubai, UAE">Dubai, UAE</option>
+          </select>
+        </div>
+
+        <!-- Button group / 按钮区域 -->
+        <div class="button-group">
+          <button id="searchBtn" type="button">Get Details</button>
+          <button id="currentLocationBtn" type="button" class="secondary-btn">
+            Use My Location
+          </button>
+        </div>
+
+        <!-- Message area for loading or errors / 显示加载或错误信息 -->
+        <p id="messageBox" class="message-box">
+          Please choose a location or use your current location.
+        </p>
+      </section>
+
+      <!-- Dashboard summary / 查询结果摘要区域 -->
+      <section class="summary-card" aria-label="Selected location summary">
+        <h2 id="locationTitle">Location Not Selected</h2>
+        <p id="timezoneText">Time zone will appear here after search.</p>
+      </section>
+
+      <!-- Results dashboard / 结果展示区域 -->
+      <section class="dashboard-grid" aria-label="Sunrise and sunset results">
+
+        <!-- Today report / 今天的数据卡片 -->
+        <article class="report-card">
+          <h2>Today&apos;s Report</h2>
+          <p class="date-text" id="todayDate">Date: --</p>
+
+          <div class="data-list">
+            <div class="data-item">
+              <span> Sunrise</span>
+              <strong id="todaySunrise">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Sunset</span>
+              <strong id="todaySunset">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Dawn</span>
+              <strong id="todayDawn">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Dusk</span>
+              <strong id="todayDusk">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Day Length</span>
+              <strong id="todayDayLength">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Solar Noon</span>
+              <strong id="todaySolarNoon">--</strong>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tomorrow report / 明天的数据卡片 -->
+        <article class="report-card">
+          <h2>Tomorrow&apos;s Report</h2>
+          <p class="date-text" id="tomorrowDate">Date: --</p>
+
+          <div class="data-list">
+            <div class="data-item">
+              <span> Sunrise</span>
+              <strong id="tomorrowSunrise">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Sunset</span>
+              <strong id="tomorrowSunset">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Dawn</span>
+              <strong id="tomorrowDawn">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Dusk</span>
+              <strong id="tomorrowDusk">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Day Length</span>
+              <strong id="tomorrowDayLength">--</strong>
+            </div>
+
+            <div class="data-item">
+              <span> Solar Noon</span>
+              <strong id="tomorrowSolarNoon">--</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- Footer / 页脚，包含 API credit -->
+    <footer class="site-footer">
+      <p>
+        Data provided by
+        <a href="https://sunrisesunset.io/" target="_blank" rel="noopener">
+          SunriseSunset.io
+        </a>
+      </p>
+    </footer>
+  </div>
+
+  <!-- External JavaScript file / 外部 JavaScript 文件 -->
+  <script src="z-shen-lab6.js"></script>
+</body>
+</html>
